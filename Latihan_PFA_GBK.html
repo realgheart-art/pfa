@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Bantuan Awal Psikologi (PFA) — untuk Guru Sekolah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#aee0f2; --sky-deep:#6cb6d9; --sage:#a9cfae; --sage-deep:#5f9c6b;
+  --cream:#fbf4e4; --parch:#f3e7cd; --wood:#9c6b3f; --wood-deep:#6f4a28;
+  --coral:#f0a387; --coral-deep:#d97a5c; --lav:#cdbfe6; --ink:#3a2f25;
+  --shadow:0 10px 30px rgba(111,74,40,.18); --shadow-sm:0 4px 14px rgba(111,74,40,.14);
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif; color:var(--ink);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #d6f0fa 0%, #eaf7f0 38%, var(--cream) 70%);
+  min-height:100vh; line-height:1.6;
+}
+/* decorative sky clouds */
+.sky{position:fixed;inset:0 0 auto 0;height:340px;z-index:-1;overflow:hidden;pointer-events:none}
+.cloud{position:absolute;background:#fff;border-radius:50%;opacity:.85;filter:blur(.3px)}
+.c1{width:120px;height:120px;top:40px;left:8%;box-shadow:60px 18px 0 -8px #fff,120px 0 0 -16px #fff}
+.c2{width:90px;height:90px;top:120px;left:62%;box-shadow:50px 14px 0 -6px #fff,100px 2px 0 -14px #fff}
+.c3{width:70px;height:70px;top:30px;left:80%;box-shadow:40px 10px 0 -6px #fff}
+
+h1,h2,h3,h4,.brand{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15}
+a{color:var(--wood-deep)}
+
+/* ---- Top bar ---- */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+  background:rgba(251,244,228,.82);border-bottom:3px solid var(--parch)}
+.bar{max-width:1080px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 20px}
+.logo{width:46px;height:46px;border-radius:14px;flex:none;
+  background:linear-gradient(135deg,var(--sky-deep),var(--sage-deep));
+  display:grid;place-items:center;color:#fff;font-family:'Fredoka';font-size:22px;font-weight:700;
+  box-shadow:var(--shadow-sm)}
+.brand b{font-family:'Fredoka';font-size:1.15rem;display:block;color:var(--wood-deep)}
+.brand span{font-size:.78rem;color:#8a7a64;font-weight:600}
+.heal{margin-left:auto;display:flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--coral);
+  color:var(--coral-deep);font-weight:800;border-radius:30px;padding:7px 14px;font-size:.85rem;text-decoration:none;
+  box-shadow:var(--shadow-sm);white-space:nowrap}
+.heal small{display:block;font-size:.62rem;color:#b08a6f;font-weight:700}
+
+/* ---- Nav pills ---- */
+nav{max-width:1080px;margin:auto;display:flex;gap:8px;padding:10px 16px;overflow-x:auto}
+nav button{font-family:'Fredoka';font-weight:500;border:none;cursor:pointer;white-space:nowrap;
+  background:#fff;color:var(--wood-deep);border:2px solid var(--parch);border-radius:30px;
+  padding:8px 16px;font-size:.9rem;transition:.18s;box-shadow:var(--shadow-sm)}
+nav button:hover{transform:translateY(-2px)}
+nav button.active{background:var(--wood-deep);color:#fff;border-color:var(--wood-deep)}
+
+/* ---- progress ---- */
+.progwrap{max-width:1080px;margin:6px auto 0;padding:0 20px}
+.progbar{height:10px;background:var(--parch);border-radius:20px;overflow:hidden}
+.progfill{height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--sage-deep));
+  border-radius:20px;transition:width .5s}
+.proglbl{font-size:.72rem;color:#8a7a64;font-weight:700;margin:4px 2px 0}
+
+main{max-width:1080px;margin:auto;padding:24px 20px 80px}
+section{display:none;animation:fade .4s ease}
+section.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.card{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--shadow);
+  border:1px solid #f0e6d2;margin-bottom:20px}
+.plank{background:linear-gradient(180deg,var(--parch),#ecdcbb);border-radius:16px;
+  padding:14px 18px;border:2px solid #e0cda3;font-weight:700;box-shadow:inset 0 -3px 0 rgba(159,107,63,.18)}
+.kicker{display:inline-block;background:var(--sky);color:var(--wood-deep);font-family:'Fredoka';
+  font-weight:600;padding:5px 14px;border-radius:20px;font-size:.8rem;margin-bottom:12px}
+.sectitle{font-size:1.9rem;color:var(--wood-deep);margin-bottom:6px}
+.lead{color:#6b5b46;font-size:1.02rem;margin-bottom:18px;max-width:62ch}
+
+/* ---- HERO ---- */
+.hero{text-align:center;padding:40px 20px 10px}
+.signboard{display:inline-block;background:linear-gradient(180deg,var(--wood),#7e5530);
+  color:#fff;border-radius:26px;padding:22px 40px;box-shadow:var(--shadow);border:4px solid #5c3d20;
+  transform:rotate(-1deg);position:relative;margin-bottom:18px}
+.signboard:before,.signboard:after{content:"";position:absolute;top:-12px;width:16px;height:16px;
+  border-radius:50%;background:#5c3d20}
+.signboard:before{left:24px}.signboard:after{right:24px}
+.signboard small{display:block;font-family:'Fredoka';font-weight:400;font-size:.95rem;opacity:.9;margin-top:4px}
+.signboard h1{font-size:2.3rem;letter-spacing:.5px;text-shadow:0 2px 0 rgba(0,0,0,.18)}
+.hero p.sub{max-width:54ch;margin:6px auto 22px;color:#6b5b46;font-size:1.05rem}
+.btn{font-family:'Fredoka';font-weight:600;border:none;cursor:pointer;border-radius:30px;
+  padding:13px 28px;font-size:1rem;transition:.18s;box-shadow:var(--shadow-sm)}
+.btn-primary{background:linear-gradient(135deg,var(--sage-deep),#4d8459);color:#fff}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-ghost{background:#fff;color:var(--wood-deep);border:2px solid var(--parch)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:26px}
+.tile{background:#fff;border-radius:18px;padding:20px;text-align:left;cursor:pointer;border:2px solid #f0e6d2;
+  transition:.18s;box-shadow:var(--shadow-sm)}
+.tile:hover{transform:translateY(-4px);border-color:var(--sage)}
+.tile .ic{font-size:1.8rem}
+.tile b{font-family:'Fredoka';display:block;margin:8px 0 4px;color:var(--wood-deep);font-size:1.05rem}
+.tile span{font-size:.86rem;color:#7a6a54}
+.done-badge{float:right;background:var(--sage);color:#fff;border-radius:20px;font-size:.7rem;font-weight:800;padding:2px 9px}
+
+/* ---- generic content ---- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.pill-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.pill-list li{background:var(--cream);border-radius:14px;padding:11px 14px;border:1px solid #efe2c6;
+  display:flex;gap:10px;align-items:flex-start}
+.pill-list li .b{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;color:#fff;font-size:.8rem}
+.b-yes{background:var(--sage-deep)}.b-no{background:var(--coral-deep)}.b-num{background:var(--sky-deep)}
+
+h3.blk{color:var(--wood-deep);margin:18px 0 8px;font-size:1.25rem}
+.note{background:var(--sky);border-left:5px solid var(--sky-deep);border-radius:12px;padding:12px 16px;
+  font-size:.92rem;color:#3f5b67;margin-top:14px}
+.warn{background:#fbe6dd;border-left:5px solid var(--coral-deep);border-radius:12px;padding:12px 16px;
+  font-size:.92rem;color:#7a4632;margin-top:14px}
+
+/* ---- pyramid ---- */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:6px;margin:16px 0}
+.layer{color:#fff;font-family:'Fredoka';font-weight:600;text-align:center;cursor:pointer;
+  padding:14px 10px;border-radius:12px;transition:.18s;box-shadow:var(--shadow-sm);position:relative}
+.layer:hover{transform:scale(1.02)}
+.l4{width:46%;background:linear-gradient(135deg,#b88bd6,#9a6bc0)}
+.l3{width:62%;background:linear-gradient(135deg,#e89a7e,#d97a5c)}
+.l2{width:78%;background:linear-gradient(135deg,#7fb98a,#5f9c6b)}
+.l1{width:94%;background:linear-gradient(135deg,#6cb6d9,#4f97bd)}
+.layer small{display:block;font-weight:400;font-size:.78rem;opacity:.95}
+.layer-detail{display:none;background:var(--cream);border-radius:12px;padding:14px;margin-top:6px;
+  font-size:.9rem;border:1px solid #efe2c6}
+.layer-detail.show{display:block}
+
+/* ---- breathing ---- */
+.breathe-stage{display:flex;flex-direction:column;align-items:center;gap:14px;padding:10px}
+.orb{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  font-family:'Fredoka';font-size:1.1rem;text-align:center;
+  background:radial-gradient(circle at 35% 30%,#bfe6f4,var(--sky-deep));
+  box-shadow:0 0 0 0 rgba(108,182,217,.45);transition:transform .2s linear}
+.orb .cnt{font-size:2.6rem;font-weight:700}
+.orb.run{transition:transform 1s ease-in-out}
+
+/* ---- grounding ---- */
+.ground-step{background:var(--cream);border-radius:14px;padding:12px 14px;margin-bottom:10px;border:1px solid #efe2c6}
+.ground-step label{font-family:'Fredoka';color:var(--wood-deep);font-weight:600}
+.ground-step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:var(--sky-deep);color:#fff;font-weight:800;margin-right:8px}
+.ground-step input{width:100%;margin-top:8px;border:2px solid #e7d8b8;border-radius:10px;padding:9px 12px;
+  font-family:'Nunito';font-size:.95rem;background:#fff}
+.ground-step input:focus{outline:none;border-color:var(--sage)}
+.ground-step.filled{background:#eaf6ec;border-color:var(--sage)}
+
+/* ---- reveal cards (validation / do-dont / LLL) ---- */
+.reveal{background:var(--cream);border-radius:14px;padding:14px;margin-bottom:12px;border:1px solid #efe2c6}
+.reveal .q{font-weight:700}
+.reveal .a{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed #d9c8a4;color:#4d6b54}
+.reveal.open .a{display:block}
+.reveal .toggle{font-family:'Fredoka';cursor:pointer;color:var(--sky-deep);font-weight:600;
+  font-size:.85rem;margin-top:6px;display:inline-block}
+
+/* ---- scenario sim ---- */
+.scen-pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:16px}
+.scen-pick button{text-align:left;padding:18px;border-radius:16px;border:2px solid #f0e6d2;background:#fff;
+  cursor:pointer;font-family:'Nunito';transition:.18s;box-shadow:var(--shadow-sm)}
+.scen-pick button:hover{transform:translateY(-3px);border-color:var(--coral)}
+.scen-pick b{font-family:'Fredoka';color:var(--wood-deep);display:block;margin-bottom:4px}
+.step-card{background:var(--cream);border-radius:14px;padding:16px;margin-bottom:12px;border:1px solid #efe2c6;
+  display:flex;gap:14px;align-items:flex-start}
+.step-tag{flex:none;font-family:'Fredoka';font-weight:700;color:#fff;border-radius:10px;padding:6px 12px;font-size:.85rem}
+
+/* ---- quiz ---- */
+.q-card{margin-bottom:18px}
+.q-card .qn{font-family:'Fredoka';color:var(--wood-deep);font-weight:600;margin-bottom:10px}
+.opt{display:block;background:var(--cream);border:2px solid #efe2c6;border-radius:12px;padding:11px 14px;
+  margin-bottom:8px;cursor:pointer;transition:.15s;font-size:.95rem}
+.opt:hover{border-color:var(--sky)}
+.opt.sel{border-color:var(--sky-deep);background:#e7f4fb}
+.opt.correct{border-color:var(--sage-deep);background:#e8f6ea}
+.opt.wrong{border-color:var(--coral-deep);background:#fbe6dd}
+.result{text-align:center;padding:26px}
+.score-ring{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;
+  font-family:'Fredoka';font-size:2rem;font-weight:700;color:var(--wood-deep)}
+
+footer{text-align:center;padding:26px;color:#9a8669;font-size:.82rem}
+.kbd{background:#fff;border:1px solid #e7d8b8;border-radius:6px;padding:1px 7px;font-size:.8rem;font-weight:700}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="sky"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div></div>
+
+<header>
+  <div class="bar">
+    <div class="logo">PFA</div>
+    <div class="brand"><b>Latihan Bantuan Awal Psikologi</b><span>untuk Guru Bimbingan &amp; Kaunseling (GBK)</span></div>
+    <a class="heal" href="tel:15555">☎ HEAL 15555<small>Sokongan emosi 8 pagi–12 malam</small></a>
+  </div>
+  <nav id="nav"></nav>
+  <div class="progwrap">
+    <div class="progbar"><div class="progfill" id="progfill"></div></div>
+    <div class="proglbl" id="proglbl">Kemajuan anda: 0%</div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="show">
+  <div class="hero">
+    <div class="signboard"><h1>Bantuan Awal Psikologi</h1><small>Modul Latihan Interaktif untuk Guru</small></div>
+    <p class="sub">Belajar membantu murid meredakan ketegangan emosi semasa krisis — melalui prinsip <b>Look, Listen, Link</b>, teknik penstabilan praktikal, dan simulasi senario sebenar sekolah.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="go('u1')">Mula Belajar →</button>
+      <button class="btn btn-ghost" onclick="go('quiz')">Terus ke Kuiz</button>
+    </div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+</section>
+
+<!-- ============ UNIT 1 ============ -->
+<section id="u1">
+  <span class="kicker">Unit 1</span>
+  <h2 class="sectitle">Pengenalan &amp; Konsep Asas PFA</h2>
+  <p class="lead">Memahami apa itu PFA, bezanya dengan kaunseling, dan peranan GBK sebagai penyelaras krisis.</p>
+
+  <div class="card">
+    <h3 class="blk">Apa itu PFA?</h3>
+    <div class="plank">Bantuan Awal Psikologi (PFA) ialah sokongan kemanusiaan yang <b>praktikal</b> untuk meredakan ketegangan emosi murid semasa krisis.</div>
+    <ul class="pill-list">
+      <li><span class="b b-yes">✓</span> Beri kelegaan awal &amp; pastikan keselamatan</li>
+      <li><span class="b b-yes">✓</span> Elak emosi menjadi lebih teruk</li>
+      <li><span class="b b-yes">✓</span> Sesiapa yang telah <b>dilatih</b> boleh memberi PFA</li>
+    </ul>
+    <div class="note">PFA <b>bukan</b> untuk merawat trauma secara profesional — ia bantuan awal, bukan terapi.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">PFA vs Kaunseling</h3>
+    <div class="grid2">
+      <div>
+        <div class="plank" style="background:linear-gradient(180deg,#d6ecf7,#bfe0f0);border-color:#a8d0e6">PFA</div>
+        <ul class="pill-list">
+          <li><span class="b b-num">●</span> Penstabilan emosi segera</li>
+          <li><span class="b b-num">●</span> Memenuhi keperluan fizikal &amp; asas</li>
+          <li><span class="b b-num">●</span> Menghubungkan murid dengan bantuan</li>
+          <li><span class="b b-num">●</span> Tiada diagnosis klinikal</li>
+        </ul>
+      </div>
+      <div>
+        <div class="plank" style="background:linear-gradient(180deg,#dcecdd,#c6e0c9);border-color:#a9cfae">KAUNSELING</div>
+        <ul class="pill-list">
+          <li><span class="b b-yes">●</span> Proses terapi psikologi mendalam</li>
+          <li><span class="b b-yes">●</span> Berstruktur &amp; berterusan</li>
+          <li><span class="b b-yes">●</span> Menangani isu emosi jangka panjang</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">Peranan GBK: Pemilikan &amp; Kepimpinan</h3>
+    <div class="plank">GBK ialah <b>Penyelaras Krisis &amp; Pakar Rujuk (SME)</b> — bukan pelaksana tunggal.</div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="reveal"><div class="q">💡 Pakar Rujuk (SME)</div><span class="toggle" onclick="rev(this)">Lihat ▾</span><div class="a">Membimbing pasukan dengan kepakaran teknik penstabilan emosi yang lebih mendalam.</div></div>
+      <div class="reveal"><div class="q">👥 Bukan Pelaksana Tunggal</div><span class="toggle" onclick="rev(this)">Lihat ▾</span><div class="a">PFA ialah gerak kerja berpasukan yang diselaraskan, bukan beban seorang.</div></div>
+      <div class="reveal"><div class="q">➜ Kepimpinan dalam Rujukan</div><span class="toggle" onclick="rev(this)">Lihat ▾</span><div class="a">Mengetuai koordinasi rujukan ke hospital, PKD atau Pasukan MHPSS.</div></div>
+      <div class="reveal"><div class="q">🛡 Menjaga Kesejahteraan Warga</div><span class="toggle" onclick="rev(this)">Lihat ▾</span><div class="a">Bertanggungjawab terhadap kesejahteraan emosi seluruh warga sekolah.</div></div>
+    </div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u1');go('u2')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 2 ============ -->
+<section id="u2">
+  <span class="kicker">Unit 2</span>
+  <h2 class="sectitle">Impak Krisis &amp; Kesihatan Mental Murid</h2>
+  <p class="lead">Mengenali spektrum kesihatan mental, faktor risiko &amp; pelindung, serta kesan psikologi krisis.</p>
+
+  <div class="card">
+    <h3 class="blk">Spektrum Kesihatan Mental</h3>
+    <p style="color:#6b5b46;font-size:.92rem">Kesihatan mental bersifat <b>dinamik</b> — boleh berubah mengikut keadaan.</p>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:150px;background:#e8f6ea;border:2px solid var(--sage);border-radius:14px;padding:14px">
+        <b style="font-family:Fredoka;color:var(--sage-deep)">Kesejahteraan Mental</b><br><span style="font-size:.85rem">Menyedari potensi diri &amp; berfungsi produktif.</span></div>
+      <div style="flex:1;min-width:150px;background:#fdf6e3;border:2px solid #e8c969;border-radius:14px;padding:14px">
+        <b style="font-family:Fredoka;color:#b8902b">Masalah Kesihatan Mental</b><br><span style="font-size:.85rem">Gangguan sementara; fungsi seharian terjejas.</span></div>
+      <div style="flex:1;min-width:150px;background:#fbe6dd;border:2px solid var(--coral);border-radius:14px;padding:14px">
+        <b style="font-family:Fredoka;color:var(--coral-deep)">Penyakit Mental</b><br><span style="font-size:.85rem">Gangguan ketara; perlu rujukan profesional.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <h3 class="blk">⚠️ Faktor Risiko</h3>
+        <ul class="pill-list">
+          <li><span class="b b-no">!</span> Masalah kesihatan / penyakit kronik</li>
+          <li><span class="b b-no">!</span> Daya tahan &amp; keyakinan diri rendah</li>
+          <li><span class="b b-no">!</span> Tragedi hidup &amp; trauma (penderaan, buli siber)</li>
+          <li><span class="b b-no">!</span> Masalah sosio-ekonomi &amp; konflik rakan sebaya</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="blk">🛡 Faktor Pelindung</h3>
+        <ul class="pill-list">
+          <li><span class="b b-yes">✓</span> Kemahiran daya tindak &amp; pegangan agama kukuh</li>
+          <li><span class="b b-yes">✓</span> Gaya hidup sihat</li>
+          <li><span class="b b-yes">✓</span> Sokongan keluarga, rakan &amp; guru</li>
+          <li><span class="b b-yes">✓</span> Sekolah selamat &amp; akses bimbingan/kaunseling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">Kesan Psikologi — Apa Perlu Anda Perhati</h3>
+    <div class="tiles" style="margin-top:6px">
+      <div class="tile"><div class="ic">🧠</div><b>Kognitif</b><span>Sukar fokus, imbas kembali kejadian, mudah lupa.</span></div>
+      <div class="tile"><div class="ic">💪</div><b>Fizikal</b><span>Sakit kepala, gangguan tidur &amp; selera, mudah letih.</span></div>
+      <div class="tile"><div class="ic">💗</div><b>Emosi</b><span>Bimbang, sedih berpanjangan, mudah marah, rasa bersalah.</span></div>
+      <div class="tile"><div class="ic">🚶</div><b>Tingkah Laku</b><span>Mengasingkan diri, prestasi merosot, tingkah laku berisiko.</span></div>
+    </div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u2');go('u3')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 3 ============ -->
+<section id="u3">
+  <span class="kicker">Unit 3</span>
+  <h2 class="sectitle">Aplikasi Prinsip PFA — Look, Listen, Link</h2>
+  <p class="lead">Tiga prinsip teras PFA, berasaskan Piramid Intervensi MHPSS (IASC 2010).</p>
+
+  <div class="card">
+    <h3 class="blk">Piramid Intervensi MHPSS <span style="font-size:.8rem;color:#8a7a64">(klik setiap lapisan)</span></h3>
+    <div class="pyramid">
+      <div class="layer l4" onclick="lay('d4')">Lapisan 4 — Perkhidmatan Pakar<small>rujukan klinikal</small></div>
+      <div class="layer-detail" id="d4">Penjagaan oleh pakar (psikiatri, psikologi klinikal). GBK mengenal pasti &amp; merujuk segera kes berisiko tinggi.</div>
+      <div class="layer l3" onclick="lay('d3')">Lapisan 3 — Sokongan Terfokus (PFA)<small>peranan utama anda</small></div>
+      <div class="layer-detail" id="d3">Di sinilah PFA dilaksanakan secara terfokus oleh Pasukan PFA Sekolah yang terlatih. GBK jadi pakar rujuk.</div>
+      <div class="layer l2" onclick="lay('d2')">Lapisan 2 — Sokongan Komuniti &amp; Keluarga<small></small></div>
+      <div class="layer-detail" id="d2">Mengaktifkan sokongan rakan sebaya (PRS) &amp; guru lain supaya murid tidak berasa keseorangan.</div>
+      <div class="layer l1" onclick="lay('d1')">Lapisan 1 — Perkhidmatan Asas &amp; Keselamatan<small>tapak</small></div>
+      <div class="layer-detail" id="d1">Memastikan keperluan asas (perlindungan, makanan, keselamatan) dipenuhi secara adil &amp; melindungi maruah murid.</div>
+    </div>
+    <div class="note">Semua lapisan dilaksanakan <b>serentak</b>, bukan satu demi satu.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">3 Prinsip: Look • Listen • Link</h3>
+    <div class="reveal open"><div class="q">👁️ LIHAT (Look)</div><div class="a">Pastikan keselamatan kawasan • Kenal pasti keperluan asas (air, makanan, bantuan perubatan) • Perhatikan reaksi tekanan (panik, menangis ketakutan).</div></div>
+    <div class="reveal open"><div class="q">👂 DENGAR (Listen)</div><div class="a">Perkenalkan diri &amp; minta izin • Dengar dengan empati &amp; bantu murid tenang • Beri ruang; jangan paksa bercakap.</div></div>
+    <div class="reveal open"><div class="q">🔗 HUBUNG (Link)</div><div class="a">Sambung dengan keluarga/penjaga • Beri maklumat bantuan yang tepat • Rujuk <b>Talian HEAL 15555</b> atau klinik kesihatan jika perlu.</div></div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">Patut vs Jangan dalam PFA</h3>
+    <div class="grid2">
+      <ul class="pill-list">
+        <li><span class="b b-yes">✓</span> Bercakap tenang &amp; perlahan</li>
+        <li><span class="b b-yes">✓</span> Sabar &amp; dengar secara aktif</li>
+        <li><span class="b b-yes">✓</span> Hargai kekuatan mangsa &amp; jaga privasi</li>
+      </ul>
+      <ul class="pill-list">
+        <li><span class="b b-no">✗</span> Jangan beri janji palsu</li>
+        <li><span class="b b-no">✗</span> Jangan melabel "simptom" / diagnosis</li>
+        <li><span class="b b-no">✗</span> Jangan desak mangsa bercerita</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u3');go('u4')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 4 ============ -->
+<section id="u4">
+  <span class="kicker">Unit 4 · Interaktif</span>
+  <h2 class="sectitle">Teknik Penstabilan Emosi</h2>
+  <p class="lead">Cuba sendiri teknik yang anda akan gunakan bersama murid.</p>
+
+  <div class="card">
+    <h3 class="blk">🌬️ Latihan Pernafasan 4-7-8</h3>
+    <p style="color:#6b5b46;font-size:.92rem">Tarik nafas 4 saat · tahan 7 saat · hembus 8 saat. Tekan mula dan ikut bulatan.</p>
+    <div class="breathe-stage">
+      <div class="orb" id="orb"><div><div class="cnt" id="bcount">4-7-8</div><span id="bphase">Sedia?</span></div></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="bbtn" onclick="toggleBreath()">Mula Bernafas</button>
+        <span id="bcycles" style="align-self:center;color:#8a7a64;font-weight:700"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">✋ Grounding Deria 5-4-3-2-1</h3>
+    <p style="color:#6b5b46;font-size:.92rem">Isi setiap kotak untuk mengalihkan fokus murid kembali kepada realiti semasa.</p>
+    <div id="ground"></div>
+    <div class="note" id="ground-done" style="display:none">🎉 Hebat! Anda baru sahaja melengkapkan satu pusingan grounding penuh.</div>
+  </div>
+
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <h3 class="blk">🧘 Relaksasi Otot</h3>
+        <ul class="pill-list">
+          <li><span class="b b-num">●</span> Regangan tangan</li>
+          <li><span class="b b-num">●</span> Regangan bahu</li>
+          <li><span class="b b-num">●</span> Regangan kaki</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="blk">🎨 Aktiviti Kreatif</h3>
+        <ul class="pill-list">
+          <li><span class="b b-yes">●</span> Mewarna &amp; melukis</li>
+          <li><span class="b b-yes">●</span> Playdoh / bola stres</li>
+          <li><span class="b b-yes">●</span> Body Outline</li>
+        </ul>
+        <div class="warn" style="font-size:.82rem">Hasil seni milik murid. Hasil yang membimbangkan = asas untuk rujukan pakar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="blk">💬 Validasi Emosi — Tukar Ayat Anda</h3>
+    <p style="color:#6b5b46;font-size:.92rem">Elak <i>toxic positivity</i>. Klik untuk lihat ayat validasi yang lebih baik.</p>
+    <div class="reveal"><div class="q"><span style="color:var(--coral-deep)">✗</span> "Janganlah nangis, benda kecil je ni."</div><span class="toggle" onclick="rev(this)">Ayat lebih baik ▾</span><div class="a"><b style="color:var(--sage-deep)">✓</b> "Saya nampak perkara ini sangat berat untuk awak lalui sekarang."</div></div>
+    <div class="reveal"><div class="q"><span style="color:var(--coral-deep)">✗</span> "Sabar, mesti ada hikmah di sebaliknya."</div><span class="toggle" onclick="rev(this)">Ayat lebih baik ▾</span><div class="a"><b style="color:var(--sage-deep)">✓</b> "Wajar untuk awak rasa sedih atau marah dalam situasi sebegini."</div></div>
+    <div class="reveal"><div class="q"><span style="color:var(--coral-deep)">✗</span> "Orang lain lagi teruk, awak beruntung lagi."</div><span class="toggle" onclick="rev(this)">Ayat lebih baik ▾</span><div class="a"><b style="color:var(--sage-deep)">✓</b> "Saya di sini untuk mendengar bila awak sudah bersedia untuk bercakap."</div></div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u4');go('u5')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 5 ============ -->
+<section id="u5">
+  <span class="kicker">Unit 5</span>
+  <h2 class="sectitle">Penjagaan Diri (Self-Care) Petugas</h2>
+  <p class="lead">Anda tidak boleh menuang dari cawan yang kosong. Jaga diri sebelum, semasa &amp; selepas bertugas.</p>
+  <div class="card">
+    <div class="tiles">
+      <div class="tile" style="border-color:var(--sky)"><div class="ic">🎒</div><b>Pra-Tugasan</b><span>Penilaian kendiri (PHQ-9/GAD-7) · kesihatan fizikal · taklimat · sedia PFA Kit.</span></div>
+      <div class="tile" style="border-color:var(--sage)"><div class="ic">⚙️</div><b>Semasa Tugasan</b><span>Tidur &amp; makan cukup · pernafasan 4-7-8 · buddy system · tetapkan sempadan.</span></div>
+      <div class="tile" style="border-color:var(--coral)"><div class="ic">🏡</div><b>Pasca-Tugasan</b><span>Debriefing · aktiviti fizikal · ritual peralihan peranan · pantau gejala 1-2 minggu.</span></div>
+    </div>
+    <div class="note">Kenali had diri. Maklumkan ketua pasukan jika emosi mula terganggu — itu tanda kekuatan, bukan kelemahan.</div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u5');go('u6')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 6 ============ -->
+<section id="u6">
+  <span class="kicker">Unit 6</span>
+  <h2 class="sectitle">SOP Pengaktifan &amp; Aliran Kerja Krisis</h2>
+  <p class="lead">Aliran kerja sistematik daripada insiden sehingga dokumentasi akhir.</p>
+  <div class="card">
+    <h3 class="blk">Pasukan PFA Sekolah</h3>
+    <ul class="pill-list">
+      <li><span class="b b-num">1</span><b>Pengetua / Guru Besar</b> — Penaung / Komander Krisis</li>
+      <li><span class="b b-num">2</span><b>GBK</b> — Penyelaras Teknikal &amp; Ketua Pasukan</li>
+      <li><span class="b b-num">3</span><b>Guru / AKP / Pimpinan Pelajar</b> — Ahli Pasukan PFA</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 class="blk">Aliran Kerja</h3>
+    <div class="pill-list">
+      <li><span class="b b-num">①</span> Kejadian insiden / krisis / bencana</li>
+      <li><span class="b b-num">②</span> Tindakan segera — pentadbir kawal keselamatan, GBK bentuk pasukan</li>
+      <li><span class="b b-num">③</span> Penilaian risiko → <b>A:</b> terkawal (internal) / <b>B:</b> tinggi (bantuan luar)</li>
+      <li><span class="b b-num">④</span> Mobilisasi: PPD → JPN → Kesihatan (MHPSS PKD)</li>
+      <li><span class="b b-num">⑤</span> Stabilisasi 2–14 hari · Talian HEAL 15555 · dokumentasi dalam 14 hari</li>
+    </div>
+    <div class="note">Kriteria bantuan luar: insiden berskala besar · reaksi emosi kritikal · skor saringan Teruk/Sangat Teruk · kekangan kapasiti.</div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u6');go('u7')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ UNIT 7 ============ -->
+<section id="u7">
+  <span class="kicker">Unit 7</span>
+  <h2 class="sectitle">Pelaporan Media Selamat (MySAVE)</h2>
+  <p class="lead">Mengendalikan maklumat krisis secara beretika untuk mencegah peniruan tingkah laku.</p>
+  <div class="card">
+    <h3 class="blk">Prinsip S.E.L.A.M.A.T</h3>
+    <ul class="pill-list">
+      <li><span class="b b-num">S</span> Sebarkan maklumat sahih &amp; tepat</li>
+      <li><span class="b b-num">E</span> Elakkan tajuk yang sensasi</li>
+      <li><span class="b b-num">L</span> Langkah mendapatkan bantuan (HEAL 15555)</li>
+      <li><span class="b b-num">A</span> Adab menjaga kerahsiaan peribadi</li>
+      <li><span class="b b-num">M</span> Menjaga privasi waris</li>
+      <li><span class="b b-num">A</span> Advokasi kesedaran kesihatan mental</li>
+      <li><span class="b b-num">T</span> Tanggungjawab sosial berita beretika</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 class="blk">Perkara yang Perlu Dielak</h3>
+    <ul class="pill-list">
+      <li><span class="b b-no">✗</span> Jangan ceritakan kaedah secara terperinci</li>
+      <li><span class="b b-no">✗</span> Jangan paparkan imej/video atau nota</li>
+      <li><span class="b b-no">✗</span> Jangan nyatakan punca tunggal — kejadian adalah multifaktorial</li>
+    </ul>
+    <div class="note">Templat kenyataan sekolah: <b>Takziah → Peringatan privasi → Elak spekulasi (siasatan pihak berkuasa) → Sumber bantuan (HEAL 15555)</b>.</div>
+  </div>
+  <div class="btn-row" style="justify-content:flex-end"><button class="btn btn-primary" onclick="complete('u7');go('sim')">Tandakan Selesai →</button></div>
+</section>
+
+<!-- ============ SIMULASI ============ -->
+<section id="sim">
+  <span class="kicker">Simulasi · Interaktif</span>
+  <h2 class="sectitle">Simulasi Krisis (LDK)</h2>
+  <p class="lead">Pilih senario dan langkah melalui tindak balas anda mengikut Look, Listen, Link.</p>
+  <div class="scen-pick">
+    <button onclick="loadScen('A')"><b>Senario A</b><span>Kecemasan murid — protokol tindak balas krisis</span></button>
+    <button onclick="loadScen('B')"><b>Senario B</b><span>Histeria berkelompok di kelas/asrama</span></button>
+    <button onclick="loadScen('C')"><b>Senario C</b><span>Murid kembali selepas bencana alam</span></button>
+  </div>
+  <div class="card" id="scen-box" style="display:none">
+    <h3 class="blk" id="scen-title"></h3>
+    <p id="scen-sit" style="background:var(--cream);border-radius:12px;padding:12px 14px;border:1px solid #efe2c6;font-size:.95rem"></p>
+    <div id="scen-steps" style="margin-top:14px"></div>
+    <div class="warn" id="scen-care" style="margin-top:12px"></div>
+    <div class="btn-row" style="justify-content:flex-end;margin-top:12px"><button class="btn btn-primary" onclick="complete('sim');go('quiz')">Selesai → Kuiz</button></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz">
+  <span class="kicker">Penilaian</span>
+  <h2 class="sectitle">Kuiz Pemahaman PFA</h2>
+  <p class="lead">Uji kefahaman anda. Jawab semua soalan, kemudian semak skor &amp; jawapan.</p>
+  <div class="card" id="quiz-box"><div id="quiz-items"></div>
+    <div class="btn-row"><button class="btn btn-primary" onclick="markQuiz()">Semak Jawapan</button>
+    <button class="btn btn-ghost" onclick="resetQuiz()">Cuba Semula</button></div>
+  </div>
+  <div class="card hide" id="quiz-result"></div>
+</section>
+
+</main>
+
+<footer>
+  Latihan Bantuan Awal Psikologi (PFA) · Modul Penyelarasan untuk GBK<br>
+  Jika anda atau seseorang memerlukan sokongan emosi, hubungi <b>Talian HEAL 15555</b> (8 pagi–12 malam).<br>
+  <span style="opacity:.7">by Cikgu Shahril</span>
+</footer>
+
+<script>
+/* ---------- Navigation ---------- */
+const SECTIONS=[
+  ['home','🏠 Utama'],['u1','1· Pengenalan'],['u2','2· Impak Krisis'],['u3','3· Look Listen Link'],
+  ['u4','4· Teknik'],['u5','5· Self-Care'],['u6','6· SOP Krisis'],['u7','7· MySAVE'],
+  ['sim','🎭 Simulasi'],['quiz','📝 Kuiz']
+];
+const TRACK=['u1','u2','u3','u4','u5','u6','u7','sim','quiz'];
+let store={};
+try{store=JSON.parse(localStorage.getItem('pfa_progress')||'{}')}catch(e){store={}}
+function save(){try{localStorage.setItem('pfa_progress',JSON.stringify(store))}catch(e){}}
+
+const nav=document.getElementById('nav');
+SECTIONS.forEach(([id,label])=>{
+  const b=document.createElement('button');b.textContent=label;b.id='nav-'+id;
+  b.onclick=()=>go(id);nav.appendChild(b);
+});
+function go(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('show',s.id===id));
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.id==='nav-'+id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function complete(id){store[id]=true;save();updateProg();buildTiles();}
+function updateProg(){
+  const done=TRACK.filter(t=>store[t]).length;const pct=Math.round(done/TRACK.length*100);
+  document.getElementById('progfill').style.width=pct+'%';
+  document.getElementById('proglbl').textContent='Kemajuan anda: '+pct+'%  ('+done+'/'+TRACK.length+' bahagian)';
+}
+
+/* ---------- Home tiles ---------- */
+const TILES=[
+  ['u1','📘','Unit 1','Pengenalan & konsep asas PFA'],
+  ['u2','💗','Unit 2','Impak krisis & kesihatan mental'],
+  ['u3','👁️','Unit 3','Look, Listen, Link + Piramid MHPSS'],
+  ['u4','🌬️','Unit 4','Teknik penstabilan (interaktif)'],
+  ['u5','🏡','Unit 5','Penjagaan diri petugas'],
+  ['u6','🧭','Unit 6','SOP & aliran kerja krisis'],
+  ['u7','📰','Unit 7','Pelaporan media selamat'],
+  ['sim','🎭','Simulasi','Senario krisis interaktif'],
+  ['quiz','📝','Kuiz','Uji kefahaman anda']
+];
+function buildTiles(){
+  const t=document.getElementById('tiles');t.innerHTML='';
+  TILES.forEach(([id,ic,h,d])=>{
+    const el=document.createElement('div');el.className='tile';el.onclick=()=>go(id);
+    el.innerHTML=`${store[id]?'<span class="done-badge">✓ Siap</span>':''}<div class="ic">${ic}</div><b>${h}</b><span>${d}</span>`;
+    t.appendChild(el);
+  });
+}
+
+/* ---------- generic reveal ---------- */
+function rev(el){el.parentElement.classList.toggle('open');}
+function lay(id){document.getElementById(id).classList.toggle('show');}
+
+/* ---------- Breathing 4-7-8 ---------- */
+let bTimer=null,bRunning=false,bCycle=0;
+const phases=[['Tarik nafas',4,1.0],['Tahan',7,1.0],['Hembus',8,0.55]];
+function toggleBreath(){bRunning?stopBreath():startBreath();}
+function startBreath(){
+  bRunning=true;bCycle=0;document.getElementById('bbtn').textContent='Berhenti';
+  document.getElementById('orb').classList.add('run');runPhase(0);
+}
+function stopBreath(){
+  bRunning=false;clearTimeout(bTimer);
+  const orb=document.getElementById('orb');orb.classList.remove('run');orb.style.transform='scale(1)';
+  document.getElementById('bbtn').textContent='Mula Bernafas';
+  document.getElementById('bphase').textContent='Sedia?';document.getElementById('bcount').textContent='4-7-8';
+}
+function runPhase(i){
+  if(!bRunning)return;
+  const [label,secs,scale]=phases[i];
+  const orb=document.getElementById('orb');
+  orb.style.transitionDuration=secs+'s';orb.style.transform='scale('+scale+')';
+  document.getElementById('bphase').textContent=label;
+  let left=secs;document.getElementById('bcount').textContent=left;
+  const tick=()=>{
+    if(!bRunning)return;
+    left--;
+    if(left>0){document.getElementById('bcount').textContent=left;bTimer=setTimeout(tick,1000);}
+    else{
+      let nxt=(i+1)%3;if(nxt===0){bCycle++;document.getElementById('bcycles').textContent='Pusingan: '+bCycle;}
+      bTimer=setTimeout(()=>runPhase(nxt),200);
+    }
+  };
+  bTimer=setTimeout(tick,1000);
+}
+
+/* ---------- Grounding 5-4-3-2-1 ---------- */
+const G=[[5,'perkara yang anda LIHAT 👁️'],[4,'perkara yang anda SENTUH ✋'],[3,'perkara yang anda DENGAR 👂'],[2,'perkara yang anda HIDU 👃'],[1,'perkara yang anda RASA 👅']];
+function buildGround(){
+  const g=document.getElementById('ground');g.innerHTML='';
+  G.forEach(([n,txt],idx)=>{
+    const d=document.createElement('div');d.className='ground-step';
+    d.innerHTML=`<label><span class="n">${n}</span>${txt}</label><input type="text" placeholder="Taip di sini..." oninput="groundCheck()">`;
+    g.appendChild(d);
+  });
+}
+function groundCheck(){
+  const steps=document.querySelectorAll('.ground-step');let filled=0;
+  steps.forEach(s=>{const v=s.querySelector('input').value.trim();s.classList.toggle('filled',!!v);if(v)filled++;});
+  document.getElementById('ground-done').style.display=filled===steps.length?'block':'none';
+}
+
+/* ---------- Scenario simulator ---------- */
+const SCEN={
+  A:{title:'Senario A — Kecemasan Murid',
+    sit:'Berlaku kecemasan melibatkan seorang murid di kawasan sekolah. Keadaan cemas dan murid lain mula berkumpul.',
+    steps:[['LOOK','#4f97bd','Kawal keadaan; minta guru lain menyuraikan murid bagi menjaga maruah mangsa.'],
+      ['LISTEN','#5f9c6b','Beri sokongan awal kepada saksi (rakan sekelas) yang sedang trauma/histeris.'],
+      ['LINK','#d97a5c','Aktifkan MERS 999 dan hubungi Pasukan MHPSS PKD untuk intervensi segera.'],
+      ['PELAPORAN','#9a6bc0','Draf kenyataan ikut MySAVE — tanpa sensasi, tanpa dedah kaedah, fokus Talian HEAL 15555.']],
+    care:'Selepas terkawal: jalankan sesi debriefing untuk pasukan. Jaga emosi anda juga.'},
+  B:{title:'Senario B — Histeria Berkelompok',
+    sit:'Beberapa orang murid di dalam kelas mula bertindak histeria secara tiba-tiba. Murid lain mula panik.',
+    steps:[['LOOK','#4f97bd','Kenal pasti murid yang terlibat dan asingkan mereka ke ruang yang tenang.'],
+      ['STABILIZE','#5f9c6b','Gunakan teknik Grounding 5-4-3-2-1 atau pernafasan teratur untuk menenangkan.'],
+      ['LINK','#d97a5c','Hubungi ibu bapa dan maklumkan dengan tenang — elak spekulasi mistik yang keterlaluan.'],
+      ['SELF-CARE','#9a6bc0','Sesi debriefing antara GBK &amp; pasukan sokongan selepas situasi terkawal.']],
+    care:'Ketenangan anda menular kepada murid. Bercakap perlahan dan yakin.'},
+  C:{title:'Senario C — Selepas Bencana Alam',
+    sit:'Murid kembali ke sekolah dalam keadaan sedih &amp; trauma; ada yang kehilangan harta benda atau orang tersayang.',
+    steps:[['LOOK','#4f97bd','Kenal pasti murid yang menunjukkan tanda stres, sedih atau trauma.'],
+      ['STABILIZE','#5f9c6b','Tenangkan melalui perbualan ringkas, sokongan emosi &amp; teknik pernafasan/Grounding.'],
+      ['LINK','#d97a5c','Hubungkan murid dengan bantuan sesuai — ibu bapa, guru, atau agensi sokongan.'],
+      ['SELF-CARE','#9a6bc0','Sesi debriefing pasukan selepas tamat sesi PFA.']],
+    care:'Pemulihan mengambil masa. Hargai kemajuan kecil setiap murid.'}
+};
+function loadScen(k){
+  const s=SCEN[k];document.getElementById('scen-box').style.display='block';
+  document.getElementById('scen-title').textContent=s.title;
+  document.getElementById('scen-sit').innerHTML='<b>Situasi:</b> '+s.sit;
+  const box=document.getElementById('scen-steps');box.innerHTML='';
+  s.steps.forEach(([tag,col,txt],i)=>{
+    const d=document.createElement('div');d.className='step-card';
+    d.innerHTML=`<span class="step-tag" style="background:${col}">${tag}</span><div>${txt}</div>`;
+    d.style.opacity=0;d.style.transform='translateX(-10px)';box.appendChild(d);
+    setTimeout(()=>{d.style.transition='.4s';d.style.opacity=1;d.style.transform='none';},120*(i+1));
+  });
+  document.getElementById('scen-care').innerHTML='💛 <b>Penjagaan Diri:</b> '+s.care;
+  document.getElementById('scen-box').scrollIntoView({behavior:'smooth'});
+}
+
+/* ---------- Quiz ---------- */
+const QUIZ=[
+  {q:'Apakah matlamat utama PFA?',o:['Merawat trauma secara profesional','Meredakan ketegangan emosi & beri kelegaan awal','Memberi diagnosis klinikal','Menggantikan sesi kaunseling'],a:1},
+  {q:'Siapakah yang boleh memberikan PFA?',o:['Hanya pakar psikiatri','Hanya GBK','Sesiapa yang telah dilatih','Hanya pentadbir sekolah'],a:2},
+  {q:'Yang manakah ciri PFA (bukan kaunseling)?',o:['Proses terapi jangka panjang','Penstabilan emosi segera tanpa diagnosis','Berstruktur & berterusan','Diagnosis klinikal mendalam'],a:1},
+  {q:'Dalam teknik 5-4-3-2-1, angka "5" merujuk kepada perkara yang…',o:['didengar','dihidu','dilihat','disentuh'],a:2},
+  {q:'Urutan betul Pernafasan 4-7-8 ialah…',o:['Tahan 4, tarik 7, hembus 8','Tarik 4, tahan 7, hembus 8','Hembus 4, tarik 7, tahan 8','Tarik 8, tahan 7, hembus 4'],a:1},
+  {q:'Dalam prinsip LINK, talian sokongan emosi yang dirujuk ialah…',o:['MERS 999','Talian HEAL 15555','Talian Nur 15999','BOMBA 994'],a:1},
+  {q:'Pada lapisan piramid MHPSS yang manakah PFA menjadi peranan utama?',o:['Lapisan 1','Lapisan 2','Lapisan 3','Lapisan 4'],a:2},
+  {q:'Yang manakah TIDAK patut dilakukan (Don\u2019t) dalam PFA?',o:['Bercakap tenang & perlahan','Memberi janji atau jaminan palsu','Menghargai kekuatan mangsa','Menjaga privasi mangsa'],a:1},
+  {q:'Dalam S.E.L.A.M.A.T, huruf "L" bermaksud…',o:['Langkah mendapatkan bantuan','Laporan terperinci','Lindungi nama mangsa','Luahkan perasaan'],a:0},
+  {q:'Dalam Senario A, nombor kecemasan yang diaktifkan ialah…',o:['HEAL 15555','MERS 999','Talian Kasih 15999','PKD sahaja'],a:1}
+];
+let qSel={};
+function buildQuiz(){
+  const c=document.getElementById('quiz-items');c.innerHTML='';qSel={};
+  QUIZ.forEach((item,qi)=>{
+    const d=document.createElement('div');d.className='q-card';
+    let opts=item.o.map((o,oi)=>`<label class="opt" data-q="${qi}" data-o="${oi}" onclick="pick(${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</label>`).join('');
+    d.innerHTML=`<div class="qn">${qi+1}. ${item.q}</div>${opts}`;c.appendChild(d);
+  });
+  document.getElementById('quiz-result').classList.add('hide');
+}
+function pick(qi,oi){
+  qSel[qi]=oi;
+  document.querySelectorAll(`.opt[data-q="${qi}"]`).forEach(el=>el.classList.toggle('sel',+el.dataset.o===oi));
+}
+function markQuiz(){
+  if(Object.keys(qSel).length<QUIZ.length){alert('Sila jawab semua '+QUIZ.length+' soalan dahulu.');return;}
+  let score=0;
+  QUIZ.forEach((item,qi)=>{
+    document.querySelectorAll(`.opt[data-q="${qi}"]`).forEach(el=>{
+      const oi=+el.dataset.o;el.style.pointerEvents='none';
+      if(oi===item.a)el.classList.add('correct');
+      else if(oi===qSel[qi])el.classList.add('wrong');
+    });
+    if(qSel[qi]===item.a)score++;
+  });
+  const pct=Math.round(score/QUIZ.length*100);
+  let band,col,msg;
+  if(pct>=90){band='Cemerlang';col='#5f9c6b';msg='Anda sangat bersedia untuk membantu sebagai petugas PFA!';}
+  else if(pct>=70){band='Baik';col='#4f97bd';msg='Kefahaman yang kukuh. Ulang kaji bahagian yang tersilap.';}
+  else if(pct>=50){band='Sederhana';col='#b8902b';msg='Asas sudah ada — semak semula unit berkaitan untuk pengukuhan.';}
+  else{band='Perlu Ulang Kaji';col='#d97a5c';msg='Jangan risau — kembali ke unit dan cuba lagi. Anda boleh!';}
+  const r=document.getElementById('quiz-result');r.classList.remove('hide');
+  r.innerHTML=`<div class="result">
+    <div class="score-ring" style="background:conic-gradient(${col} ${pct*3.6}deg,#f0e6d2 0)">
+      <div style="background:#fff;width:100px;height:100px;border-radius:50%;display:grid;place-items:center">${pct}%</div></div>
+    <h3 style="color:${col};font-size:1.5rem">${band}</h3>
+    <p style="color:#6b5b46;margin:6px 0 4px">Anda betul ${score} daripada ${QUIZ.length} soalan.</p>
+    <p style="color:#8a7a64">${msg}</p></div>`;
+  store['quiz']=true;save();updateProg();buildTiles();
+  r.scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){buildQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+
+/* ---------- init ---------- */
+buildTiles();buildGround();buildQuiz();updateProg();
+</script>
+</body>
+</html>
